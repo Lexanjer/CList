@@ -1,0 +1,261 @@
+{
+  "dataBase": [
+    {
+      "checkList": [
+        {
+          "option": "Database1",
+          "value": "privet"
+        },
+        {
+          "option": "fuel pump",
+          "value": "On"
+        },
+        {
+          "option": "Strobe",
+          "value": "Checkt"
+        },
+        {
+          "option": "fuel pump",
+          "value": "Checkt"
+        },
+        {
+          "option": "MMCp",
+          "value": "On"
+        },
+        {
+          "option": "fuel pump",
+          "value": "On"
+        },
+        {
+          "option": "MMCp",
+          "value": "Checkt"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Set"
+        },
+        {
+          "option": "yaw dumper",
+          "value": "Off"
+        },
+        {
+          "option": "MMCp",
+          "value": "On"
+        }
+      ],
+      "name": "Preflay Preparation"
+    },
+    {
+      "checkList": [
+        {
+          "option": "vvsem",
+          "value": "privet"
+        },
+        {
+          "option": "Strobe",
+          "value": "On"
+        },
+        {
+          "option": "autopilot on",
+          "value": "Checkt"
+        },
+        {
+          "option": "autopilot on",
+          "value": "Off"
+        },
+        {
+          "option": "fuel pump",
+          "value": "Set"
+        },
+        {
+          "option": "fuel pump",
+          "value": "On"
+        },
+        {
+          "option": "autopilot on",
+          "value": "On"
+        },
+        {
+          "option": "Strobe",
+          "value": "On"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Checkt"
+        },
+        {
+          "option": "Strobe",
+          "value": "Set"
+        },
+        {
+          "option": "yaw dumper",
+          "value": "Off"
+        },
+        {
+          "option": "Strobe",
+          "value": "On"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        },
+        {
+          "option": "Strobe",
+          "value": "Checkt"
+        },
+        {
+          "option": "navigation light",
+          "value": "Set"
+        }
+      ],
+      "name": "Before Start Engine"
+    },
+    {
+      "checkList": [
+        {
+          "option": "vvsem",
+          "value": "privet"
+        },
+        {
+          "option": "navigation light",
+          "value": "Checkt"
+        },
+        {
+          "option": "autopilot on",
+          "value": "Off"
+        },
+        {
+          "option": "autopilot on",
+          "value": "On"
+        },
+        {
+          "option": "fuel pump",
+          "value": "Set"
+        },
+        {
+          "option": "Windows hheat",
+          "value": "Off"
+        },
+        {
+          "option": "Strobe",
+          "value": "On"
+        }
+      ],
+      "name": "Before Taxi"
+    },
+    {
+      "checkList": [
+        {
+          "option": "vvsem",
+          "value": "privet"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        },
+        {
+          "option": "bat switch",
+          "value": "Checkt"
+        },
+        {
+          "option": "yaw dumper",
+          "value": "Set"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        },
+        {
+          "option": "MMCp",
+          "value": "Off"
+        },
+        {
+          "option": "parking bbreak",
+          "value": "Checkt"
+        },
+        {
+          "option": "MMCp",
+          "value": "On"
+        },
+        {
+          "option": "fuel pump",
+          "value": "Off"
+        },
+        {
+          "option": "Windows hheat",
+          "value": "Off"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        },
+        {
+          "option": "Strobe",
+          "value": "Off"
+        },
+        {
+          "option": "A/T Set",
+          "value": "Off"
+        }
+      ],
+      "name": "Taxi"
+    },
+    {
+      "checkList": [
+        {
+          "option": "vvsem",
+          "value": "privet"
+        },
+        {
+          "option": "navigation light",
+          "value": "Set"
+        },
+        {
+          "option": "autopilot on",
+          "value": "Set"
+        },
+        {
+          "option": "autopilot on",
+          "value": "Checkt"
+        },
+        {
+          "option": "navigation light",
+          "value": "On"
+        },
+        {
+          "option": "parking bbreak",
+          "value": "Checkt"
+        },
+        {
+          "option": "Strobe",
+          "value": "Checkt"
+        },
+        {
+          "option": "A/T Set",
+          "value": "On"
+        },
+        {
+          "option": "Strobe",
+          "value": "Off"
+        },
+        {
+          "option": "yaw dumper",
+          "value": "Checkt"
+        },
+        {
+          "option": "parking bbreak",
+          "value": "Set"
+        },
+        {
+          "option": "yaw dumper",
+          "value": "Checkt"
+        }
+      ],
+      "name": "Before TakeOff"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+[
+  {
+    "checkList": [
+      {
+        "option": "vvsem",
+        "value": "privet"
+      },
+      {
+        "option": "Strobe",
+        "value": "Checkt"
+      },
+      {
+        "option": "MMCp",
+        "value": "Set"
+      },
+      {
+        "option": "autopilot on",
+        "value": "Set"
+      },
+      {
+        "option": "A/T Set",
+        "value": "Set"
+      },
+      {
+        "option": "fuel pump",
+        "value": "On"
+      },
+      {
+        "option": "autopilot on",
+        "value": "Checkt"
+      },
+      {
+        "option": "navigation light",
+        "value": "On"
+      },
+      {
+        "option": "navigation light",
+        "value": "On"
+      },
+      {
+        "option": "parking bbreak",
+        "value": "Off"
+      },
+      {
+        "option": "A/T Set",
+        "value": "Checkt"
+      }
+    ],
+    "name": "CheckLlst1"
+  },
+  {
+    "checkList": [
+      {
+        "option": "vvsem",
+        "value": "privet"
+      },
+      {
+        "option": "Strobe",
+        "value": "On"
+      },
+      {
+        "option": "MMCp",
+        "value": "Checkt"
+      },
+      {
+        "option": "Strobe",
+        "value": "Checkt"
+      },
+      {
+        "option": "MMCp",
+        "value": "Off"
+      },
+      {
+        "option": "Strobe",
+        "value": "Set"
+      },
+      {
+        "option": "navigation light",
+        "value": "On"
+      },
+      {
+        "option": "bat switch",
+        "value": "Off"
+      },
+      {
+        "option": "Windows hheat",
+        "value": "Checkt"
+      },
+      {
+        "option": "Strobe",
+        "value": "Off"
+      },
+      {
+        "option": "parking bbreak",
+        "value": "Set"
+      },
+      {
+        "option": "A/T Set",
+        "value": "Checkt"
+      },
+      {
+        "option": "MMCp",
+        "value": "Set"
+      },
+      {
+        "option": "MMCp",
+        "value": "Checkt"
+      }
+    ],
+    "name": "CheckLlst2"
+  },
+  {
+    "checkList": [
+      {
+        "option": "vvsem",
+        "value": "privet"
+      },
+      {
+        "option": "A/T Set",
+        "value": "On"
+      },
+      {
+        "option": "MMCp",
+        "value": "On"
+      },
+      {
+        "option": "A/T Set",
+        "value": "Checkt"
+      },
+      {
+        "option": "fuel pump",
+        "value": "Set"
+      },
+      {
+        "option": "Windows hheat",
+        "value": "On"
+      },
+      {
+        "option": "fuel pump",
+        "value": "On"
+      },
+      {
+        "option": "fuel pump",
+        "value": "Off"
+      },
+      {
+        "option": "parking bbreak",
+        "value": "Set"
+      },
+      {
+        "option": "bat switch",
+        "value": "Checkt"
+      }
+    ],
+    "name": "CheckLlst3"
+  },
+  {
+    "checkList": [
+      {
+        "option": "vvsem",
+        "value": "privet"
+      },
+      {
+        "option": "autopilot on",
+        "value": "Set"
+      },
+      {
+        "option": "bat switch",
+        "value": "On"
+      },
+      {
+        "option": "navigation light",
+        "value": "Checkt"
+      },
+      {
+        "option": "yaw dumper",
+        "value": "Off"
+      },
+      {
+        "option": "parking bbreak",
+        "value": "Set"
+      },
+      {
+        "option": "fuel pump",
+        "value": "Set"
+      },
+      {
+        "option": "bat switch",
+        "value": "Checkt"
+      },
+      {
+        "option": "bat switch",
+        "value": "Checkt"
+      },
+      {
+        "option": "MMCp",
+        "value": "Off"
+      },
+      {
+        "option": "Strobe",
+        "value": "On"
+      }
+    ],
+    "name": "CheckLlst4"
+  },
+  {
+    "checkList": [
+      {
+        "option": "vvsem",
+        "value": "privet"
+      },
+      {
+        "option": "A/T Set",
+        "value": "Checkt"
+      },
+      {
+        "option": "MMCp",
+        "value": "Checkt"
+      },
+      {
+        "option": "yaw dumper",
+        "value": "Set"
+      },
+      {
+        "option": "yaw dumper",
+        "value": "Set"
+      }
+    ],
+    "name": "CheckLlst5"
+  }
+]

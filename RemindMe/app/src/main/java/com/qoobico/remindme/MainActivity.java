@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         initNavigationView();
         initTabs();
+        DataBase dataBase = new DataBase(this);
     }
 
     private void initToolbar() {
