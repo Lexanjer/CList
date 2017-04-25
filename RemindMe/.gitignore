@@ -4,3 +4,6 @@
 .DS_Store
 /build
 RemindMe.iml
+/build.gradle
+/gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
