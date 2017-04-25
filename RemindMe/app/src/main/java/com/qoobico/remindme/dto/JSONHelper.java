@@ -1,7 +1,7 @@
 package com.qoobico.remindme.dto;
 
 
- //compile 'com.google.code.gson:gson:2.8.0'
+ //    compile 'com.google.code.gson:gson:2.8.0'
 
 import android.content.Context;
 import android.content.res.AssetManager;
