@@ -7,3 +7,4 @@ RemindMe.iml
 /build.gradle
 /gradle/wrapper/gradle-wrapper.properties
 /gradle/wrapper/gradle-wrapper.jar
+/app/build.gradle
