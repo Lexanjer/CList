@@ -1,16 +1,11 @@
 package com.qoobico.remindme.adapter;
 
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.qoobico.remindme.R;
-import com.qoobico.remindme.dto.RemindDTO;
-
-import java.util.List;
+import android.support.v7.widget.*;
+import android.view.*;
+import android.widget.*;
+import com.qoobico.remindme.*;
+import com.qoobico.remindme.dto.*;
+import java.util.*;
 
 public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.RemindViewHolder> {
 
@@ -43,15 +38,17 @@ public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.Re
     }
 
     public static class RemindViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
+        LinearLayout cardView;
         TextView title;
 
         public RemindViewHolder(View itemView) {
             super(itemView);
 
-            cardView = (CardView) itemView.findViewById(R.id.cardView);
+            cardView = (LinearLayout) itemView.findViewById(R.id.cardView);
             title = (TextView) itemView.findViewById(R.id.title);
         }
     }
+		
+		
 
 }

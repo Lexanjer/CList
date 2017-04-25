@@ -1,20 +1,14 @@
 package com.qoobico.remindme.fragment;
 
-import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.qoobico.remindme.R;
-import com.qoobico.remindme.adapter.RemindListAdapter;
-import com.qoobico.remindme.dto.RemindDTO;
-
-import java.util.List;
+import android.content.*;
+import android.os.*;
+import android.support.annotation.*;
+import android.support.v7.widget.*;
+import android.view.*;
+import com.qoobico.remindme.*;
+import com.qoobico.remindme.adapter.*;
+import com.qoobico.remindme.dto.*;
+import java.util.*;
 
 public class HistoryFragment extends AbstractTabFragment {
     private static final int LAYOUT = R.layout.fragment_history;
@@ -42,11 +36,28 @@ public class HistoryFragment extends AbstractTabFragment {
         RecyclerView rv = (RecyclerView) view.findViewById(R.id.recycleView);
         rv.setLayoutManager(new LinearLayoutManager(context));
 
-        adapter = new RemindListAdapter(data);
+        adapter = new RemindListAdapter(createListData());
         rv.setAdapter(adapter);
 
         return view;
     }
+		
+		private List<RemindDTO> createListData() {
+
+        List<RemindDTO> dataList = new ArrayList<>();
+        dataList.add(new RemindDTO("DATASOFT"));
+        dataList.add(new RemindDTO("world"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("hello"));
+        dataList.add(new RemindDTO("DATASOFT"));
+
+        return dataList;
+    }
+		
 
     public void refreshList(List<RemindDTO> data) {
         adapter.setData(data);

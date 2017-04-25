@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new TabsFragmentAdapter(getApplicationContext(), getSupportFragmentManager(), new ArrayList<RemindDTO>());
         viewPager.setAdapter(adapter);
 
-        new RemindMeTask().execute();
+   //     new RemindMeTask().execute();
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setCurrentItem(Constants.TAB_TWO);
     }
 
+		
+		/*
     private class RemindMeTask extends AsyncTask<Void, Void, RemindDTO> {
 
         @Override
@@ -104,4 +106,6 @@ public class MainActivity extends AppCompatActivity {
             adapter.setData(data);
         }
     }
+		
+		*/
 }
