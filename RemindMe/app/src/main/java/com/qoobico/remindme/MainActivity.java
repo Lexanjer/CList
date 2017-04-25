@@ -1,25 +1,18 @@
 package com.qoobico.remindme;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-
-import com.qoobico.remindme.adapter.TabsFragmentAdapter;
-import com.qoobico.remindme.dto.RemindDTO;
-
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import android.*;
+import android.os.*;
+import android.support.design.widget.*;
+import android.support.v4.view.*;
+import android.support.v4.widget.*;
+import android.support.v7.app.*;
+import android.support.v7.widget.*;
+import android.view.*;
+import com.qoobico.remindme.adapter.*;
+import com.qoobico.remindme.dto.*;
+import java.util.*;
+import org.springframework.http.converter.json.*;
+import org.springframework.web.client.*;
 
 public class MainActivity extends AppCompatActivity {
 
