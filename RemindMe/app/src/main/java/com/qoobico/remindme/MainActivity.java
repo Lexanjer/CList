@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TabsFragmentAdapter adapter;
 
+		
+		
+		
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppDefault);
