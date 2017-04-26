@@ -21,8 +21,9 @@ public class ActivityDark extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+		setTheme(R.style.AppLight);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dark);
+        setContentView(R.layout.activity_light);
 
 				DataBase dataBase = new DataBase(this);
 				Toast.makeText(this, "здесь выводится база "

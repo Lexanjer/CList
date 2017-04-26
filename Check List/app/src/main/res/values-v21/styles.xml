@@ -8,4 +8,20 @@
 
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+
+
+    <style name="AppLight" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryAppLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAppLight</item>
+        <item name="colorControlNormal">@color/colorBlack</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppDark" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryAppDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAppDark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
 </resources>

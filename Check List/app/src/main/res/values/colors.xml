@@ -5,4 +5,12 @@
     <color name="mainBackground">#e2e2e2</color>
     <color name="colorWhite">#e2e2e2</color>
     <color name="colorBlack">#191919</color>
+
+    <color name="colorPrimaryAppLight">#bdbdbd</color>
+    <color name="colorPrimaryDarkAppLight">#9e9e9e</color>
+    <color name="colorPrimaryAppDark">#232323</color>
+    <color name="colorPrimaryDarkAppDark">#060606</color>
+    <color name="colorAccent">#1b6b6b</color>
+
+
 </resources>
