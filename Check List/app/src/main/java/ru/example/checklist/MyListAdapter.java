@@ -7,7 +7,7 @@ import android.view.*;
 import android.widget.*;
 import java.util.*;
 
-import android.support.v7.appcompat.R;
+  //import android.support.v7.appcompat.R;
 
 public class MyListAdapter extends ArrayAdapter<CheckItem>
 {
