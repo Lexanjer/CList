@@ -1,4 +1,4 @@
-package com.qoobico.remindme;
+package ru.example.checklist;
 
 public class Constants {
 

@@ -1,13 +1,10 @@
-package com.qoobico.remindme.fragment;
+package ru.example.checklist ;
 
 import android.content.*;
 import android.os.*;
 import android.support.annotation.*;
 import android.support.v7.widget.*;
 import android.view.*;
-import com.qoobico.remindme.*;
-import com.qoobico.remindme.adapter.*;
-import com.qoobico.remindme.dto.*;
 import java.util.*;
 
 public class HistoryFragment extends AbstractTabFragment {

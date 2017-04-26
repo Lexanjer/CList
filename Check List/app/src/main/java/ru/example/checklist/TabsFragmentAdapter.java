@@ -1,20 +1,8 @@
-package com.qoobico.remindme.adapter;
+package ru.example.checklist;
 
-import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-
-import com.qoobico.remindme.dto.RemindDTO;
-import com.qoobico.remindme.fragment.AbstractTabFragment;
-import com.qoobico.remindme.fragment.BirthdaysFragment;
-import com.qoobico.remindme.fragment.HistoryFragment;
-import com.qoobico.remindme.fragment.IdeasFragment;
-import com.qoobico.remindme.fragment.TodoFragment;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.content.*;
+import android.support.v4.app.*;
+import java.util.*;
 
 public class TabsFragmentAdapter extends FragmentPagerAdapter {
 

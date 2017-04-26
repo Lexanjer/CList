@@ -1,9 +1,9 @@
-package com.qoobico.remindme.fragment;
+package ru.example.checklist ;
 
 
-import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.view.View;
+import android.content.*;
+import android.support.v4.app.*;
+import android.view.*;
 
 public class AbstractTabFragment extends Fragment {
 

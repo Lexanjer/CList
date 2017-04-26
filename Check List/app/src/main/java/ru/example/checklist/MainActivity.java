@@ -1,6 +1,7 @@
-package com.qoobico.remindme;
 
-import android.*;
+
+package ru.example.checklist;
+
 import android.os.*;
 import android.support.design.widget.*;
 import android.support.v4.view.*;
@@ -8,11 +9,7 @@ import android.support.v4.widget.*;
 import android.support.v7.app.*;
 import android.support.v7.widget.*;
 import android.view.*;
-import com.qoobico.remindme.adapter.*;
-import com.qoobico.remindme.dto.*;
 import java.util.*;
-import org.springframework.http.converter.json.*;
-import org.springframework.web.client.*;
 
 public class MainActivity extends AppCompatActivity {
 

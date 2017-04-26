@@ -1,19 +1,13 @@
-package com.qoobico.remindme.dto;
+package ru.example.checklist ;
 
 
  //    compile 'com.google.code.gson:gson:2.8.0'
 
-import android.content.Context;
-import android.content.res.AssetManager;
-
-import com.google.gson.Gson;
-import com.qoobico.remindme.dto.CheckListFull;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import android.content.*;
+import android.content.res.*;
+import com.google.gson.*;
+import java.io.*;
+import java.util.*;
 
 public class JSONHelper {
 

@@ -1,4 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.qoobico.remindme">
+
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.example.checklist">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

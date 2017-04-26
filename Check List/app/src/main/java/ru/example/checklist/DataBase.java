@@ -1,4 +1,4 @@
-package com.qoobico.remindme.dto;
+package ru.example.checklist ;
 
 
 import android.content.Context;

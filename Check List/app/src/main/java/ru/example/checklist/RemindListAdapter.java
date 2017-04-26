@@ -1,10 +1,8 @@
-package com.qoobico.remindme.adapter;
+package ru.example.checklist;
 
 import android.support.v7.widget.*;
 import android.view.*;
 import android.widget.*;
-import com.qoobico.remindme.*;
-import com.qoobico.remindme.dto.*;
 import java.util.*;
 
 public class RemindListAdapter extends RecyclerView.Adapter<RemindListAdapter.RemindViewHolder> {
