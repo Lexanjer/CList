@@ -2,6 +2,7 @@
 
 package ru.example.checklist;
 
+import android.content.*;
 import android.os.*;
 import android.support.design.widget.*;
 import android.support.v4.view.*;
@@ -12,6 +13,12 @@ import android.view.*;
 import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
+		
+		final String LOG_TAG = "myLogs";
+
+		static final String TAG = "myLogs";
+    //static int PAGE_COUNT ;
+		
 
     private static final int LAYOUT = R.layout.activity_main;
 
@@ -36,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         DataBase dataBase = new DataBase(this);
     }
 
+		
+		
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
@@ -43,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 return false;
-            }
+            }  
         });
 
         toolbar.inflateMenu(R.menu.menu);
@@ -84,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNotificationTab() {
+				
+				
+				Intent intent = new Intent(MainActivity.this, ActivityDark.class);
+
+				startActivity(intent);
         viewPager.setCurrentItem(Constants.TAB_TWO);
     }
 
