@@ -21,7 +21,7 @@ public class ActivityDark extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-		setTheme(R.style.AppLight);
+		setTheme(R.style.AppDefault);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light);
 
