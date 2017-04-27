@@ -21,7 +21,8 @@
     <style name="AppDark" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimaryAppDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkAppDark</item>
-
+				<item name="colorControlNormal">@color/colorWhite</item>
+				
     </style>
 
 
