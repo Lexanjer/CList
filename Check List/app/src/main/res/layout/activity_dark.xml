@@ -1,34 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/rootLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".ActivityDark">
+	android:background="@color/mainBackgroundDark"
+	android:fitsSystemWindows="true">
 
-	
 
-		<TextView
-				android:id="@+id/activity_darkTextView"
-				android:layout_height="wrap_content"
-				android:text="Large Text"
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="wrap_content"
-				/>
-		
-	<android.support.v4.view.ViewPager
-		android:id="@+id/pagerDark"
+	<android.support.design.widget.CoordinatorLayout
+
+		android:id="@+id/coord1"
+
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
-		<android.support.v4.view.PagerTitleStrip
-			android:id="@+id/titleStripDark"
+		<ImageView
+			android:id="@+id/frame"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
 
-		</android.support.v4.view.PagerTitleStrip>
+			android:background="@drawable/roundrect_layout_dark" />
 
-	</android.support.v4.view.ViewPager>
 
-</RelativeLayout>
 
+		<android.support.design.widget.CoordinatorLayout
+			android:id="@+id/coord2"
+			android:paddingTop="1dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/roundrect_dark">
+
+
+			<ImageView
+				android:id="@+id/imageBackground"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="centerCrop"
+				android:background="@mipmap/bordo" />
+
+			<android.support.design.widget.AppBarLayout
+
+				android:id="@+id/appBar"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<android.support.v7.widget.Toolbar
+					android:id="@+id/toolBar"
+					android:layout_width="match_parent"
+					android:layout_height="?attr/actionBarSize"
+					android:background="?attr/colorPrimary"
+					android:elevation="3dp" />
+
+
+			</android.support.design.widget.AppBarLayout>
+
+
+			<android.support.v4.view.ViewPager
+				android:id="@+id/pager"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+
+
+				app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+				<android.support.v4.view.PagerTitleStrip
+					android:id="@+id/titleStrip"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/roundrect_pager_dark"
+
+					android:elevation="3dp" />
+
+			</android.support.v4.view.ViewPager>
+
+		</android.support.design.widget.CoordinatorLayout>
+
+
+	</android.support.design.widget.CoordinatorLayout>
+
+	<android.support.design.widget.NavigationView
+		android:id="@+id/navigationView"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_gravity="start"
+		android:background="@color/mainBackgroundDark"
+
+		>
+
+	</android.support.design.widget.NavigationView>
+
+
+</android.support.v4.widget.DrawerLayout>

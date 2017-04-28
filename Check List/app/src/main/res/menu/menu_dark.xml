@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/changetheme"
+        android:icon="@drawable/ic_weather_night_white_24dp"
+        android:orderInCategory="1"
+        android:title="@string/restart_btn"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/restart"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        android:orderInCategory="2"
+        android:title="@string/changetheme_btn"
+        app:showAsAction="ifRoom" />
+
+
+</menu>
