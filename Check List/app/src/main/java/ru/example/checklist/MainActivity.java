@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
         initNavigationView();
         initTabs();
         DataBase dataBase = new DataBase(this);
+				
+				Intent intent = new Intent(MainActivity.this, ActivityDark.class);
+        startActivity(intent);
+				
+				
+				
     }
 
 

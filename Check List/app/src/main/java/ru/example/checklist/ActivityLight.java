@@ -21,6 +21,10 @@ public class ActivityLight extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+				
+				
+				
+				
         setTheme(R.style.AppLight);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light);
@@ -36,8 +40,12 @@ public class ActivityLight extends AppCompatActivity {
         //   System.out.println(dataBase.getCheckList1().toString());
         //   Log.d(TAG, "Vcem privet----------------- "+dataBase.getCheckList(1).toString() );
 
-        pager = (ViewPager) findViewById(R.id.pager);
-        method();
+				pager = (ViewPager) findViewById(R.id.pager);
+				pager.setBackgroundColor(0x7f7f7f);
+				
+				
+         pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
+				
         pager.setAdapter(pagerAdapter);
 
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -60,11 +68,6 @@ public class ActivityLight extends AppCompatActivity {
     }
 
 
-    private void method() {
-        pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
-    }
-
-
-    // New coment
+    
 }
 

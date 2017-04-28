@@ -7,6 +7,10 @@
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
 
+		
+		<string name="restart_btn">Restart</string>
+    <string name="changetheme_btn">Theme</string>
+    
     <string name="tab_item_history">History</string>
     <string name="tab_item_ideas">Ideas</string>
     <string name="tab_item_todo">TODO</string>
