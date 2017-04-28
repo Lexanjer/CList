@@ -21,7 +21,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter
 
 		@Override
 		public int getCount() {
-				return ActivityDark.PAGE_COUNT;
+				return MainActivity.PAGE_COUNT;
 		}
 
 		@Override

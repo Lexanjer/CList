@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final String TAG = "myLogs";
     //static int PAGE_COUNT ;
-
+    static int PAGE_COUNT;
 
     private static final int LAYOUT = R.layout.activity_main;
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppLight);
+        setTheme(R.style.AppDefault);
         super.onCreate(savedInstanceState);
         setContentView(LAYOUT);
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartBasicActivity(View view) {
-        Intent intent = new Intent(MainActivity.this, ActivityDark.class);
+        Intent intent = new Intent(MainActivity.this, ActivityLight.class);
         startActivity(intent);
 
     }
