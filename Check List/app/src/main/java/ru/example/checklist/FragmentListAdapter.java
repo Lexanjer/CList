@@ -1,5 +1,6 @@
 package ru.example.checklist;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,11 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
 
 
     private ArrayList<CheckItem> checkList;
+    private boolean[] specialItem;
 
     public FragmentListAdapter(ArrayList<CheckItem> checkList) {
         this.checkList = checkList;
+        specialItem = new boolean[checkList.size()];
     }
 
     @Override
@@ -32,7 +35,14 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
 
         holder.item.setText(chitem.getOption());
         holder.subitem.setText(chitem.getValue());
-        holder.imageView.setImageResource(R.mipmap.ic_message_text);
+
+        if (!specialItem[position]) {
+            holder.subitem.setTextColor(0xff5e6060);
+            holder.imageView.setImageResource(R.mipmap.ic_launcher);
+        } else {
+            holder.subitem.setTextColor(Color.GREEN);
+            holder.imageView.setImageResource(R.mipmap.ic_message_text);
+        }
 
     }
 
@@ -55,6 +65,8 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
             item = (TextView) itemView.findViewById(R.id.itemView);
             subitem = (TextView) itemView.findViewById(R.id.subItemView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
+
+
         }
     }
 

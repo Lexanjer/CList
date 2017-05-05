@@ -1,5 +1,6 @@
 package ru.example.checklist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTitleStrip;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -36,31 +38,6 @@ public class ActivityDark extends AppCompatActivity {
         setContentView(R.layout.activity_dark);
 
 
-   /*     DrawerLayout rootlayout = (DrawerLayout) findViewById(R.id.root_layout);
-        rootlayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDarkAppDark));
-
-        //	rootlayout.setTextC
-
-        ImageView ramka = (ImageView) findViewById(R.id.imageView2);
-        ramka.setBackground(getResources().getDrawable(R.drawable.roundrect_layout_dark));
-
-        CoordinatorLayout coorlayout = (CoordinatorLayout) findViewById(R.id.coordl2);
-        coorlayout.setBackground(getResources().getDrawable(R.drawable.roundrect));//_dark
-
-        ImageView background = (ImageView) findViewById(R.id.imageBackground);
-        background.setImageDrawable(getResources().getDrawable(R.drawable.bordo));
-
-        PagerTitleStrip pts = (PagerTitleStrip) findViewById(R.id.titleStrip);
-        //ptsTextSize = 24;
-        pts.setBackgroundColor(R.drawable.roundrect_pager_dark);
-        pts.setTextColor(0xffffffff); //(R.color.colorWhite);
-        //	pts.setTextSize(ptsTextSize,);
-
-
-        NavigationView navView = (NavigationView) findViewById(R.id.navigationView);
-        navView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDarkAppDark));
-
-*/
         initToolbar();
 
         PagerTitleStrip pts = (PagerTitleStrip) findViewById(R.id.titleStrip);
@@ -110,12 +87,28 @@ public class ActivityDark extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.restart:
+                        restartActivity();
+                        break;
+
+
+                }
                 return false;
             }
         });
 
         toolbar.inflateMenu(R.menu.menu_dark);
     }
+
+    public void restartActivity() {
+
+        Intent intent = new Intent(this, ActivityDark.class);
+        startActivity(intent);
+        finish();
+
+    }
+
 }
 
 

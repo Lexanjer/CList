@@ -18,62 +18,17 @@ import java.util.ArrayList;
 
 
 
-/*
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_start_basic"
-                android:onClick="onStartBasicActivity"
-                android:text="@string/start_default" />
-
-				 public void onStartBasicActivity(View view) {
-        Log.d(mLogTag, "** starting BasicActivity");
-
-        // Start an Activity with the default options in the 'singleTask' launch mode as defined in
-        // the AndroidManifest.xml.
-        startActivity(new Intent(this, BasicActivity.class));
-
-    }
-
-				     <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/start_unresizable"
-                android:onClick="onStartUnresizableClick"
-                android:text="@string/start_unresizable" />
-
-
-				  public void onStartUnresizableClick(View view) {
-        Log.d(mLogTag, "** starting UnresizableActivity");
-
-         * This activity is marked as 'unresizable' in the AndroidManifest. We need to specify the
-         * FLAG_ACTIVITY_NEW_TASK flag here to launch it into a new task stack, otherwise the
-         * properties from the root activity would have been inherited (which was here marked as
-         * resizable by default).
-        Intent intent = new Intent(this, UnresizableActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        }
-
-        */
-
 
 public class MainActivity extends AppCompatActivity {
 
     final String LOG_TAG = "myLogs";
-
     static final String TAG = "myLogs";
-    //static int PAGE_COUNT ;
     static int PAGE_COUNT;
-
     private static final int LAYOUT = R.layout.activity_main;
-
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ViewPager viewPager;
-
     private TabsFragmentAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         initTabs();
         DataBase dataBase = new DataBase(this);
 				
-				//Intent intent = new Intent(MainActivity.this, ActivityDark.class);
-        //startActivity(intent);
+				Intent intent = new Intent(MainActivity.this, ActivityDark.class);
+        startActivity(intent);
 				
 				
 				
@@ -147,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartBasicActivity(View view) {
-				
-				Intent intent = new Intent(MainActivity.this, ActivityLight.class);
+
+        Intent intent = new Intent(MainActivity.this, ActivityLight.class);
         startActivity(intent);
 
     }
@@ -176,3 +131,43 @@ public class MainActivity extends AppCompatActivity {
 		
 		*/
 }
+
+
+/*
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_start_basic"
+                android:onClick="onStartBasicActivity"
+                android:text="@string/start_default" />
+
+				 public void onStartBasicActivity(View view) {
+        Log.d(mLogTag, "** starting BasicActivity");
+
+        // Start an Activity with the default options in the 'singleTask' launch mode as defined in
+        // the AndroidManifest.xml.
+        startActivity(new Intent(this, BasicActivity.class));
+
+    }
+
+				     <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/start_unresizable"
+                android:onClick="onStartUnresizableClick"
+                android:text="@string/start_unresizable" />
+
+
+				  public void onStartUnresizableClick(View view) {
+        Log.d(mLogTag, "** starting UnresizableActivity");
+
+         * This activity is marked as 'unresizable' in the AndroidManifest. We need to specify the
+         * FLAG_ACTIVITY_NEW_TASK flag here to launch it into a new task stack, otherwise the
+         * properties from the root activity would have been inherited (which was here marked as
+         * resizable by default).
+        Intent intent = new Intent(this, UnresizableActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        }
+
+        */

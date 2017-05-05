@@ -1,28 +1,28 @@
 package ru.example.checklist;
 
 
-import android.graphics.*;
-import android.os.*;
-import android.support.v4.app.*;
-import android.view.*;
-import android.widget.*;
-import java.util.*;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.ListFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class PageFragment  extends ListFragment {
+import java.util.ArrayList;
+import java.util.Random;
+
+public class PageFragment extends ListFragment {
 
     static final String ARGUMENT_PAGE_NUMBER = "arg_page_number";
     static final String TAG = "myLogs";
 
     int pageNumber;
     int backColor;
-    private ArrayList<CheckItem> checkListFrag ;
+    private ArrayList<CheckItem> checkListFrag;
     private MyListAdapter myListAdapter;
-		
-    // определяем массив типа String
-//    final String[] catNames = new String[]{"Рыжик", "Барсик", "Мурзик",
-//            "Мурка", "Васька", "Томасина", "Кристина", "Пушок", "Дымка",
-//            "Кузя", "Китти", "Масяня", "Симба"};
-//
 
     static PageFragment newInstance(int page) {
         PageFragment pageFragment = new PageFragment();
@@ -35,15 +35,12 @@ public class PageFragment  extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-				//setRetainInstance(true);
+        setRetainInstance(true);
         pageNumber = getArguments().getInt(ARGUMENT_PAGE_NUMBER);
-
-
-				//  DataBase data = new DataBase();
         ArrayList<CheckItem> checkListFrag = DataBase.getCheckList(pageNumber);   // data.getCheckList(pageNumber) ;
         this.checkListFrag = checkListFrag;
         myListAdapter = new MyListAdapter(getActivity(),
-																					R.layout.fragment_row, checkListFrag);
+                R.layout.fragment_row, checkListFrag);
         setListAdapter(myListAdapter);
 
         Random rnd = new Random();
@@ -59,11 +56,6 @@ public class PageFragment  extends ListFragment {
         LinearLayout iflayout = (LinearLayout) view.findViewById(R.id.lflayout);
         iflayout.setBackgroundColor(backColor);
 
-				/*
-				 TextView tvPage = (TextView) view.findViewById(R.id.tvPage);
-				 tvPage.setText("Page " + pageNumber);
-				 tvPage.setBackgroundColor(backColor);
-				 */
 
         return view;
 
@@ -73,89 +65,24 @@ public class PageFragment  extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        if (myListAdapter.isSpecialItem(position)){
+        if (myListAdapter.isSpecialItem(position)) {
             myListAdapter.removeSpecialItem(position);
-        }else{
+        } else {
             myListAdapter.addSpecialItem(position);
         }
         Toast.makeText(getActivity(),
-											 getListView().getItemAtPosition(position).toString(),
-											 Toast.LENGTH_LONG).show();
-				//     System.out.println(myListAdapter.isSpecialItem(position));
-				//    Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
+                getListView().getItemAtPosition(position).toString(),
+                Toast.LENGTH_LONG).show();
+        //     System.out.println(myListAdapter.isSpecialItem(position));
+        //    Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
         myListAdapter.notifyDataSetChanged();
     }
 
-		public boolean[] getSpecialArray (){
-				return myListAdapter.getSpecialItem();
-		}
+    public boolean[] getSpecialArray() {
+        return myListAdapter.getSpecialItem();
+    }
 
 
-
-		/*
-		 private class MyListAdapter extends ArrayAdapter<CheckItem> {
-
-		 private Context mContext;
-		 private final boolean[] specialItem;
-
-		 public MyListAdapter(Context context, int textViewResourceId,
-		 ArrayList<CheckItem> objects) {
-		 super(context, textViewResourceId, objects);
-		 mContext = context;
-		 specialItem = new boolean[checkListFrag.size()];
-		 }
-
-		 @Override
-		 public View getView(int position, View convertView, ViewGroup parent) {
-		 // return super.getView(position, convertView, parent);
-
-		 LayoutInflater inflater = (LayoutInflater) mContext
-		 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		 View row = inflater.inflate(R.layout.fragment_row, parent,
-		 false);
-		 TextView item = (TextView) row.findViewById(R.id.itemView);
-		 TextView subitem = (TextView) row.findViewById(R.id.subItemView);
-		 ImageView imageView = (ImageView) row.findViewById(R.id.imageView);
-
-		 CheckItem checkItem = checkListFrag.get(position);
-		 item.setText(checkItem.getOption());
-		 subitem.setText(checkItem.getValue());
-
-
-		 //     imageView.setImageResource(R.mipmap.ic_launcher_round);
-
-		 if (!specialItem[position]) {
-
-
-		 subitem.setTextColor(0xff5e6060);
-		 imageView.setImageResource(R.drawable.ic_launcher);
-		 } else {
-
-		 subitem.setTextColor(Color.GREEN);
-		 imageView.setImageResource(R.drawable.ic_launcher);
-		 }
-		 //   Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
-		 return row;
-		 }
-
-		 public void addSpecialItem(final int position) {
-		 specialItem[position] = true;
-		 }
-
-		 public void removeSpecialItem(final int position) {
-		 specialItem[position] = false;
-		 }
-
-		 public boolean isSpecialItem(final int position) {
-		 return specialItem[position];
-		 }
-
-
-
-		 }
-
-
-		 */
 }
 
 

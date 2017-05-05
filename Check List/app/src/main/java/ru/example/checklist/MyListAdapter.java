@@ -1,85 +1,96 @@
 package ru.example.checklist;
 
-import android.content.*;
-import android.graphics.*;
-import android.support.v4.app.*;
-import android.view.*;
-import android.widget.*;
-import java.util.*;
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-  //import android.support.v7.appcompat.R;
+import java.util.ArrayList;
 
-public class MyListAdapter extends ArrayAdapter<CheckItem>
-{
+//import android.support.v7.appcompat.R;
 
-		private Context mContext;
-		private boolean[] specialItem;
-		private ArrayList<CheckItem> checkList;
-
-		public MyListAdapter(Context context, int textViewResourceId,
-												 ArrayList<CheckItem> checkList) {
-				super(context, textViewResourceId, checkList);
-				mContext = context;
-				this.checkList = checkList;
-				specialItem = new boolean[checkList.size()];
-		}
+public class MyListAdapter extends ArrayAdapter<CheckItem> {
 
 
+    private boolean[] specialItem;
+    private ArrayList<CheckItem> checkList;
+    private LayoutInflater inflater;
+    private int layout;
 
 
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-				// return super.getView(position, convertView, parent);
-
-				LayoutInflater inflater = (LayoutInflater) mContext
-						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				View row = inflater.inflate(R.layout.fragment_row, parent,
-																		false);
-				TextView item = (TextView) row.findViewById(R.id.itemView);
-				TextView subitem = (TextView) row.findViewById(R.id.subItemView);
-				ImageView imageView = (ImageView) row.findViewById(R.id.imageView);
-
-				CheckItem checkItem = checkList.get(position);
-				item.setText(checkItem.getOption());
-				subitem.setText(checkItem.getValue());
+    public MyListAdapter(Context context, int textViewResourceId,
+                         ArrayList<CheckItem> checkList) {
+        super(context, textViewResourceId, checkList);
+        this.layout = textViewResourceId;
+        this.inflater = LayoutInflater.from(context);
+        this.checkList = checkList;
+        specialItem = new boolean[checkList.size()];
+    }
 
 
-				//     imageView.setImageResource(R.mipmap.ic_launcher_round);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-				if (!specialItem[position]) {
+        ViewHolder viewHolder;
+
+        if (convertView == null) {
+            convertView = inflater.inflate(this.layout, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+        CheckItem checkItem = checkList.get(position);
+        viewHolder.item.setText(checkItem.getOption());
+        viewHolder.subitem.setText(checkItem.getValue());
+
+        if (!specialItem[position]) {
+            viewHolder.subitem.setTextColor(0xff5e6060);
+            viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
+        } else {
+            viewHolder.subitem.setTextColor(Color.GREEN);
+            viewHolder.imageView.setImageResource(R.mipmap.ic_message_text);
+        }
+        //   Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
+        return convertView;
+    }
+
+    public void addSpecialItem(final int position) {
+        specialItem[position] = true;
+    }
+
+    public void removeSpecialItem(final int position) {
+        specialItem[position] = false;
+    }
+
+    public boolean isSpecialItem(final int position) {
+        return specialItem[position];
+    }
+
+    public boolean[] getSpecialItem() {
+        return specialItem;
+    }
+
+    public void setSpecialItem(boolean[] spIt) {
+        this.specialItem = spIt;
+    }
 
 
-						subitem.setTextColor(0xff5e6060);
-						imageView.setImageResource(R.mipmap.ic_launcher);
-				} else {
+    private class ViewHolder {
+        final ImageView imageView;
+        final TextView item, subitem;
 
-						subitem.setTextColor(Color.GREEN);
-						imageView.setImageResource(R.mipmap.ic_message_text);
-				}
-				//   Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
-				return row;
-		}
+        ViewHolder(View view) {
+            imageView = (ImageView) view.findViewById(R.id.imageView);
+            item = (TextView) view.findViewById(R.id.itemView);
+            subitem = (TextView) view.findViewById(R.id.subItemView);
+        }
+    }
 
-		public void addSpecialItem(final int position) {
-				specialItem[position] = true;
-		}
-
-		public void removeSpecialItem(final int position) {
-				specialItem[position] = false;
-		}
-
-		public boolean isSpecialItem(final int position) {
-				return specialItem[position];
-		}
-		public boolean[] getSpecialItem()
-		{
-				return specialItem;
-		}
-
-		public void setSpecialItem (boolean[] spIt){
-				this.specialItem = spIt;
-		}
 
 }
 

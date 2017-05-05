@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 
@@ -38,10 +39,13 @@ public class IdeasFragment extends AbstractTabFragment {
         rv.setLayoutManager(new LinearLayoutManager(context));
 
         adapter = new FragmentListAdapter(checkList);
+
         rv.setAdapter(adapter);
+
 
         return view;
     }
+
 
 
     public void setContext(Context context) {
