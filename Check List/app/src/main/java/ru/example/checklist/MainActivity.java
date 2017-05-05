@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         initTabs();
         DataBase dataBase = new DataBase(this);
 				
-				Intent intent = new Intent(MainActivity.this, ActivityDark.class);
-        startActivity(intent);
+				//Intent intent = new Intent(MainActivity.this, ActivityDark.class);
+        //startActivity(intent);
 				
 				
 				
@@ -147,7 +147,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartBasicActivity(View view) {
-        Intent intent = new Intent(MainActivity.this, ActivityLight.class);
+				
+				Intent intent = new Intent(MainActivity.this, ActivityLight.class);
         startActivity(intent);
 
     }
