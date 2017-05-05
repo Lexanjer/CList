@@ -1,37 +1,39 @@
 package ru.example.checklist;
 
-import android.support.v7.widget.*;
-import android.view.*;
-import android.widget.*;
-import java.util.*;
-import android.support.v7.widget.helper.*;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapter.FragmentViewHolder> {
 
-    
 
- //   private List<RemindDTO> data;
-		private ArrayList<CheckItem> checkList;
+    private ArrayList<CheckItem> checkList;
 
     public FragmentListAdapter(ArrayList<CheckItem> checkList) {
-   //     this.data = data;
-				this.checkList=checkList;
+        this.checkList = checkList;
     }
 
     @Override
     public FragmentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_row, parent, false);
-
         return new FragmentViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(FragmentViewHolder holder, int position) {
-      //  RemindDTO item = data.get(position);
-				CheckItem chitem = checkList.get(position);
-				
+
+        CheckItem chitem = checkList.get(position);
+
         holder.item.setText(chitem.getOption());
-				holder.subitem.setText(chitem.getValue());
+        holder.subitem.setText(chitem.getValue());
+        holder.imageView.setImageResource(R.mipmap.ic_message_text);
+
     }
 
     @Override
@@ -39,24 +41,22 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
         return checkList.size();
     }
 
-   /* public void setData(List<RemindDTO> data) {
-        this.data = data;
-    }
-*/
+
     public static class FragmentViewHolder extends RecyclerView.ViewHolder {
         LinearLayout itemLayout;
         TextView item;
-				TextView subitem;
+        TextView subitem;
+        ImageView imageView;
 
         public FragmentViewHolder(View itemView) {
             super(itemView);
 
             itemLayout = (LinearLayout) itemView.findViewById(R.id.fragment_rowLinearLayout);
             item = (TextView) itemView.findViewById(R.id.itemView);
-						subitem = (TextView) itemView.findViewById(R.id.subItemView);
+            subitem = (TextView) itemView.findViewById(R.id.subItemView);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView);
         }
     }
-
 
 
 }
