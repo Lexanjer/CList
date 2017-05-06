@@ -18,6 +18,7 @@ public class PageFragment extends ListFragment {
 
     static final String ARGUMENT_PAGE_NUMBER = "arg_page_number";
     static final String TAG = "myLogs";
+		private boolean[] specialItem;
 
     int pageNumber;
     int backColor;
@@ -39,8 +40,9 @@ public class PageFragment extends ListFragment {
         pageNumber = getArguments().getInt(ARGUMENT_PAGE_NUMBER);
         ArrayList<CheckItem> checkListFrag = DataBase.getCheckList(pageNumber);   // data.getCheckList(pageNumber) ;
         this.checkListFrag = checkListFrag;
+				specialItem = new boolean[checkListFrag.size()];
         myListAdapter = new MyListAdapter(getActivity(),
-                R.layout.fragment_row, checkListFrag);
+                R.layout.fragment_row, checkListFrag, this);
         setListAdapter(myListAdapter);
 
         Random rnd = new Random();
@@ -65,10 +67,10 @@ public class PageFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        if (myListAdapter.isSpecialItem(position)) {
-            myListAdapter.removeSpecialItem(position);
+        if (isSpecialItem(position)) {
+            removeSpecialItem(position);
         } else {
-            myListAdapter.addSpecialItem(position);
+            addSpecialItem(position);
         }
         Toast.makeText(getActivity(),
                 getListView().getItemAtPosition(position).toString(),
@@ -79,9 +81,19 @@ public class PageFragment extends ListFragment {
     }
 
     public boolean[] getSpecialArray() {
-        return myListAdapter.getSpecialItem();
+        return specialItem;
+    }
+		public void addSpecialItem(final int position) {
+        specialItem[position] = true;
     }
 
+    public void removeSpecialItem(final int position) {
+        specialItem[position] = false;
+    }
+
+    public boolean isSpecialItem(final int position) {
+        return specialItem[position];
+    }
 
 }
 

@@ -16,20 +16,20 @@ import java.util.ArrayList;
 public class MyListAdapter extends ArrayAdapter<CheckItem> {
 
 
-    private boolean[] specialItem;
-    private ArrayList<CheckItem> checkList;
+		private PageFragment page;
+		 private ArrayList<CheckItem> checkList;
     private LayoutInflater inflater;
     private int layout;
 
 
     public MyListAdapter(Context context, int textViewResourceId,
-                         ArrayList<CheckItem> checkList) {
+                         ArrayList<CheckItem> checkList,PageFragment page) {
         super(context, textViewResourceId, checkList);
         this.layout = textViewResourceId;
+				this.page = page;
         this.inflater = LayoutInflater.from(context);
         this.checkList = checkList;
-        specialItem = new boolean[checkList.size()];
-    }
+          }
 
 
     @Override
@@ -48,7 +48,9 @@ public class MyListAdapter extends ArrayAdapter<CheckItem> {
         viewHolder.item.setText(checkItem.getOption());
         viewHolder.subitem.setText(checkItem.getValue());
 
-        if (!specialItem[position]) {
+				
+				
+        if (!page.isSpecialItem(position)) {
             viewHolder.subitem.setTextColor(0xff5e6060);
             viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
         } else {
@@ -59,26 +61,8 @@ public class MyListAdapter extends ArrayAdapter<CheckItem> {
         return convertView;
     }
 
-    public void addSpecialItem(final int position) {
-        specialItem[position] = true;
-    }
-
-    public void removeSpecialItem(final int position) {
-        specialItem[position] = false;
-    }
-
-    public boolean isSpecialItem(final int position) {
-        return specialItem[position];
-    }
-
-    public boolean[] getSpecialItem() {
-        return specialItem;
-    }
-
-    public void setSpecialItem(boolean[] spIt) {
-        this.specialItem = spIt;
-    }
-
+		
+		
 
     private class ViewHolder {
         final ImageView imageView;

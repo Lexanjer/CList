@@ -108,6 +108,31 @@ public class ActivityDark extends AppCompatActivity {
         finish();
 
     }
+		
+		public void changeTheme() {
+				
+				getChecketPositions();
+
+        Intent intent = new Intent(this, ActivityLight.class);
+        startActivity(intent);
+				setCheckedPositions();
+        finish();
+
+    }
+		
+		
+		private void getChecketPositions(){
+				
+				Bundle bd = new Bundle();
+				PageFragment pg = PageFragment.;
+				
+				for (int i = 0; i< MainActivity.PAGE_COUNT ;i++){
+						
+				}
+				
+		}
+		
+		private void setCheckedPositions(){}
 
 }
 
