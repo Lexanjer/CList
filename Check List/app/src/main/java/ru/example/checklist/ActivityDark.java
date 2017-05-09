@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -29,6 +29,11 @@ public class ActivityDark extends AppCompatActivity {
     private ViewPager pager;
     private PagerAdapter pagerAdapter;
     static int ptsTextSize;
+    private ImageView background;
+    private int backgrountCount = 0;
+    private int[] backgrounds = {R.drawable.background1, R.drawable.background2, R.drawable.background3,
+            R.drawable.background4, R.drawable.background5, R.drawable.background6, R.drawable.background7,
+            R.drawable.background8, R.drawable.bordo, R.drawable.background10, R.drawable.background11};
 
 
     @Override
@@ -43,8 +48,12 @@ public class ActivityDark extends AppCompatActivity {
         PagerTitleStrip pts = (PagerTitleStrip) findViewById(R.id.titleStrip);
         //ptsTextSize = 24;
 
+        background = (ImageView) findViewById(R.id.imageBackground);
+        background.setImageDrawable(getResources().getDrawable(backgrounds[1]));
+
+
         pts.setTextColor(getResources().getColor(R.color.colorWhite)); //(R.color.colorWhite);
-        	pts.setTextSize((TypedValue.COMPLEX_UNIT_DIP), 24);
+        pts.setTextSize((TypedValue.COMPLEX_UNIT_DIP), 24);
 
         DataBase dataBase = new DataBase(this);
         Toast.makeText(this, "здесь выводится база "
@@ -87,9 +96,12 @@ public class ActivityDark extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.restart:
                         restartActivity();
+                        break;
+                    case R.id.changetheme:
+                        changeTheme();
                         break;
 
 
@@ -108,31 +120,31 @@ public class ActivityDark extends AppCompatActivity {
         finish();
 
     }
-		
-		public void changeTheme() {
-				
-				getChecketPositions();
 
-        Intent intent = new Intent(this, ActivityLight.class);
-        startActivity(intent);
-				setCheckedPositions();
-        finish();
+    public void changeTheme() {
+
+        backgrountCount = backgrountCount +1;
+        Toast.makeText(this, "backgrountCount "+backgrountCount
+                , Toast.LENGTH_SHORT).show();
+        if (backgrountCount> 10) backgrountCount = 0;
+        background.setImageDrawable(getResources().getDrawable(backgrounds[backgrountCount]));
 
     }
-		
-		
-		private void getChecketPositions(){
-				
-				Bundle bd = new Bundle();
-				PageFragment pg = PageFragment.;
-				
-				for (int i = 0; i< MainActivity.PAGE_COUNT ;i++){
-						
-				}
-				
-		}
-		
-		private void setCheckedPositions(){}
+
+
+    private void getChecketPositions() {
+
+        Bundle bd = new Bundle();
+        //		PageFragment pg = PageFragment.;
+
+        for (int i = 0; i < MainActivity.PAGE_COUNT; i++) {
+
+        }
+
+    }
+
+    private void setCheckedPositions() {
+    }
 
 }
 

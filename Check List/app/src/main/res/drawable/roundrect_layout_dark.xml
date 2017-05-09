@@ -8,7 +8,7 @@
 
         android:angle="45"
 
-        android:endColor="#ff050505"
+        android:endColor="#ff212121"
 
         android:startColor="#ff000000"
         android:gradientRadius="100"

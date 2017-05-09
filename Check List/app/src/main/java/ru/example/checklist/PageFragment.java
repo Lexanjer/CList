@@ -4,6 +4,7 @@ package ru.example.checklist;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ public class PageFragment extends ListFragment {
 
     static final String ARGUMENT_PAGE_NUMBER = "arg_page_number";
     static final String TAG = "myLogs";
-		private boolean[] specialItem;
+    private boolean[] specialItem;
 
     int pageNumber;
     int backColor;
@@ -38,15 +39,17 @@ public class PageFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
         pageNumber = getArguments().getInt(ARGUMENT_PAGE_NUMBER);
+        Random rnd = new Random();
+        backColor = Color.argb(40, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         ArrayList<CheckItem> checkListFrag = DataBase.getCheckList(pageNumber);   // data.getCheckList(pageNumber) ;
         this.checkListFrag = checkListFrag;
-				specialItem = new boolean[checkListFrag.size()];
+
+        specialItem = new boolean[checkListFrag.size()];
         myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.fragment_row, checkListFrag, this);
         setListAdapter(myListAdapter);
 
-        Random rnd = new Random();
-        backColor = Color.argb(40, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
     }
 
     @Override
@@ -56,9 +59,9 @@ public class PageFragment extends ListFragment {
 
         View view = inflater.inflate(R.layout.listfragment, null);
         LinearLayout iflayout = (LinearLayout) view.findViewById(R.id.lflayout);
-        iflayout.setBackgroundColor(backColor);
+        iflayout.setBackgroundColor(0x2887aeef);
 
-
+        Log.d(TAG,"Page " + pageNumber+ " backColor = " + Integer.toHexString(backColor));
         return view;
 
 
@@ -83,7 +86,8 @@ public class PageFragment extends ListFragment {
     public boolean[] getSpecialArray() {
         return specialItem;
     }
-		public void addSpecialItem(final int position) {
+
+    public void addSpecialItem(final int position) {
         specialItem[position] = true;
     }
 

@@ -38,7 +38,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:scaleType="centerCrop"
-				android:background="@mipmap/bordo" />
+				android:background="@drawable/background2" />
 
 			<android.support.design.widget.AppBarLayout
 
@@ -51,7 +51,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="?attr/actionBarSize"
 					android:background="?attr/colorPrimary"
-					android:elevation="3dp" />
+					android:elevation="10dp" />
 
 
 			</android.support.design.widget.AppBarLayout>
@@ -71,7 +71,7 @@
 					android:layout_height="wrap_content"
 					android:background="@drawable/roundrect_pager_dark"
 
-					android:elevation="3dp" />
+					android:elevation="10dp" />
 
 			</android.support.v4.view.ViewPager>
 
