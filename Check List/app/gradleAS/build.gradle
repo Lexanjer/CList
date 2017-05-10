@@ -34,6 +34,7 @@ dependencies {
     compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.2'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
 
 }
 

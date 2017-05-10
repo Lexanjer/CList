@@ -59,7 +59,7 @@ public class PageFragment extends ListFragment {
 
         View view = inflater.inflate(R.layout.listfragment, null);
         LinearLayout iflayout = (LinearLayout) view.findViewById(R.id.lflayout);
-        iflayout.setBackgroundColor(0x2887aeef);
+       // iflayout.setBackgroundColor(backColor);
 
         Log.d(TAG,"Page " + pageNumber+ " backColor = " + Integer.toHexString(backColor));
         return view;

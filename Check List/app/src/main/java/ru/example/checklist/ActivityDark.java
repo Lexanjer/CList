@@ -49,7 +49,7 @@ public class ActivityDark extends AppCompatActivity {
         //ptsTextSize = 24;
 
         background = (ImageView) findViewById(R.id.imageBackground);
-        background.setImageDrawable(getResources().getDrawable(backgrounds[1]));
+        background.setImageDrawable(getResources().getDrawable(backgrounds[3]));
 
 
         pts.setTextColor(getResources().getColor(R.color.colorWhite)); //(R.color.colorWhite);
