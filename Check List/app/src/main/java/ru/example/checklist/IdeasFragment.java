@@ -13,17 +13,14 @@ import android.widget.AdapterView;
 import java.util.ArrayList;
 
 public class IdeasFragment extends AbstractTabFragment {
-    private static final int LAYOUT = R.layout.fragment_history;
+    private static final int LAYOUT = R.layout.fragment_example;
 
-    private ArrayList<CheckItem> checkList;
-    private FragmentListAdapter adapter;
-
-    public static IdeasFragment getInstance(Context context) {
+    public static BirthdaysFragment getInstance(Context context) {
         Bundle args = new Bundle();
-        IdeasFragment fragment = new IdeasFragment();
+        BirthdaysFragment fragment = new BirthdaysFragment();
         fragment.setArguments(args);
         fragment.setContext(context);
-        fragment.setTitle(context.getString(R.string.tab_item_history));
+        fragment.setTitle(context.getString(R.string.tab_item_ideas));
 
         return fragment;
     }
@@ -32,25 +29,10 @@ public class IdeasFragment extends AbstractTabFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(LAYOUT, container, false);
-        ArrayList<CheckItem> checkList = DataBase.getCheckList(1);   // data.getCheckList(pageNumber) ;
-        this.checkList = checkList;
-
-        RecyclerView rv = (RecyclerView) view.findViewById(R.id.recycleView);
-        rv.setLayoutManager(new LinearLayoutManager(context));
-
-        adapter = new FragmentListAdapter(checkList);
-
-        rv.setAdapter(adapter);
-
-
         return view;
     }
-
-
 
     public void setContext(Context context) {
         this.context = context;
     }
-
-
 }
