@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/item_margin_t_b"
-    android:paddingLeft="@dimen/item_margin_l_r"
-    android:paddingRight="@dimen/item_margin_l_r"
-    android:paddingTop="@dimen/item_margin_t_b">
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
 
 
-    <LinearLayout
 
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/fragment_rowLinearLayout"
+			 
+		<android.support.v7.widget.CardView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_layout"
-
-        >
+        android:id="@+id/cardViewCheck"
+        card:cardElevation="5dp"
+        card:cardUseCompatPadding="true">
+				
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,6 +53,7 @@
             android:layout_weight="6"
             android:src="@mipmap/ic_launcher" />
 
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
+		
 
-</RelativeLayout>
+</LinearLayout>

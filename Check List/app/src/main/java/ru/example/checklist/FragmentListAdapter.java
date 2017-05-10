@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import android.support.v7.widget.*;
 
 public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapter.FragmentViewHolder> {
 
@@ -53,7 +54,7 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
 
 
     public static class FragmentViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout itemLayout;
+        CardView itemLayout;
         TextView item;
         TextView subitem;
         ImageView imageView;
@@ -61,7 +62,7 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
         public FragmentViewHolder(View itemView) {
             super(itemView);
 
-            itemLayout = (LinearLayout) itemView.findViewById(R.id.fragment_rowLinearLayout);
+            itemLayout = (CardView) itemView.findViewById(R.id.cardViewCheck);
             item = (TextView) itemView.findViewById(R.id.itemView);
             subitem = (TextView) itemView.findViewById(R.id.subItemView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
