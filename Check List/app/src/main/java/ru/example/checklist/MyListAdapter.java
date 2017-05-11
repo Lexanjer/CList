@@ -48,10 +48,10 @@ public class MyListAdapter extends ArrayAdapter<CheckItem> {
 				
         if (!page.isSpecialItem(position)) {
             viewHolder.subitem.setTextColor(0xff5e6060);
-            viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
+            viewHolder.imageView.setImageResource(R.mipmap.ic_message_text);
         } else {
             viewHolder.subitem.setTextColor(Color.GREEN);
-            viewHolder.imageView.setImageResource(R.mipmap.ic_message_text);
+            viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
         }
         //   Log.d(TAG, "boolean position = " + myListAdapter.isSpecialItem(position));
         return convertView;
@@ -61,13 +61,12 @@ public class MyListAdapter extends ArrayAdapter<CheckItem> {
 		
 
     private class ViewHolder {
-				CardView cardV;
+				
         final ImageView imageView;
         final TextView item, subitem;
 
         ViewHolder(View view) {
-						cardV = (CardView) view.findViewById(R.id.cardViewCheck);
-            imageView = (ImageView) view.findViewById(R.id.imageView);
+					  imageView = (ImageView) view.findViewById(R.id.imageView);
             item = (TextView) view.findViewById(R.id.itemView);
             subitem = (TextView) view.findViewById(R.id.subItemView);
         }
