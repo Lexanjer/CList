@@ -70,7 +70,7 @@ public class ActivityDark extends AppCompatActivity {
         pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
 
         pager.setAdapter(pagerAdapter);
-
+        pager.setPageTransformer(true, new FlipHorizontalTransformer());
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override

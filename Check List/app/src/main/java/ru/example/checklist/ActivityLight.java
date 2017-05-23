@@ -47,7 +47,7 @@ public class ActivityLight extends AppCompatActivity {
          pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
 				
         pager.setAdapter(pagerAdapter);
-
+        pager.setPageTransformer(true, new ZoomOutSlideTransformer());
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
